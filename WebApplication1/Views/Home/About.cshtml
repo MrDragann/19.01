@@ -1,0 +1,67 @@
+﻿@model WebApplication1.Controllers.Test
+@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Use this area to provide additional information. </p>
+<style>
+    label {
+        font-weight: normal;
+    }
+</style>
+<form method="post" enctype="multipart/form-data" >
+    <p>
+        <label for="name">Введите имя:</label>
+        <input type="text" name="name" id="name" placeholder="Иван"/><br />
+    </p>
+    <p>
+        <label for="tel">Введите телефон:</label>
+        <input type="tel" name="tel" id="tel" placeholder="079447733"/><br />
+    </p>
+    <p>
+        <label for="dateBirth">Введите дату рождения:</label>
+        <input type="date" name="dateBirth" id="dateBirth" /><br />
+    </p>
+    <p>
+        <input type="radio" name="sex" value="Man" id="sex1" checked="checked" /><label for="sex1">Мужчина</label>
+        <input type="radio" name="sex" value="Woman" id="sex2" /><label for="sex2">Женщина</label><br />
+    </p>
+    <p>
+        <input type="file" name="file" /><br />
+    </p>
+    <p>
+        <select name="age">
+            <option value="<18">До 18</option>
+            <option value="18-25">18-25</option>
+            <option value=">25">Более 25</option>
+        </select>
+    </p>
+    <p>
+        Владею языками:<br />
+        <input type="checkbox" name="lang1" value="russian" id="rus" /> <label for="rus">Русский </label><br />
+        <input type="checkbox" name="lang2" value="english" id="eng"/> <label for="eng">Английский</label> <br />
+        <input type="checkbox" name="lang3" value="deutsh" id="deu"/> <label for="deu">Немецкий</label> <br />
+    </p>
+    <p>
+        <textarea name="message" placeholder="Ваше сообщение">
+
+        </textarea>
+    </p>
+    <input type="submit" value="Заполнил"/>
+
+</form>
+
+<p>
+    Вы ввели:<br />
+    @Model.name<br />
+    @Model.tel<br />
+    @Model.dateBirth<br />
+    @Model.sex<br />
+    @Model.age<br />
+    @Model.message<br />
+    @Model.lang1<br />
+    @Model.lang2<br />
+    @Model.lang3<br />
+</p>
