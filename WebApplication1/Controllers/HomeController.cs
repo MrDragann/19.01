@@ -37,6 +37,7 @@ namespace WebApplication1.Controllers
 
     public class Test
     {
+        public List<string> info;
         public string name { get; set; }
         public string tel { get; set; }
         public string dateBirth { get; set; }

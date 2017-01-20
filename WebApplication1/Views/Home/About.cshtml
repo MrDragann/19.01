@@ -1,6 +1,16 @@
 ﻿@model WebApplication1.Controllers.Test
 @{
     ViewBag.Title = "About";
+    Model.info = new List<string> {
+        Model.name,
+        Model.tel,
+        Model.dateBirth,
+        Model.sex,
+        Model.age,
+        Model.lang1,
+        Model.lang2,
+        Model.lang3
+    };
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
@@ -54,14 +64,8 @@
 </form>
 
 <p>
-    Вы ввели:<br />
-    @Model.name<br />
-    @Model.tel<br />
-    @Model.dateBirth<br />
-    @Model.sex<br />
-    @Model.age<br />
-    @Model.message<br />
-    @Model.lang1<br />
-    @Model.lang2<br />
-    @Model.lang3<br />
+    @foreach (string element in Model.info)
+    {
+        @element<br/>
+    }
 </p>
